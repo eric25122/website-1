@@ -115,6 +115,6 @@ jobs:
       if: github.ref == 'refs/heads/main' && github.event_name == 'push'
       run: terraform -chdir=Environments/production apply -auto-approve -input=false
 
-#    - name: Terraform Destroy
-#      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-#      run: terraform -chdir=Environments/production destroy -auto-approve -input=false
+    - name: Terraform Destroy
+      if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+      run: terraform -chdir=Environments/production destroy -auto-approve -input=false
